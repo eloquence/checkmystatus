@@ -68,7 +68,7 @@
         minimum_delta: 300
       },
       {
-        sitename: 'Wikipedia',
+        sitename: 'Wikipedia (en)',
         type: 'desktop',
         slow: {
           url: 'https://en.wikipedia.org/wiki/Special:Watchlist'
