@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>checkmystatus - timing based login detection</title>
+  <script type="text/javascript" src="isMobile/isMobile.min.js"></script>
+  <style>
+  .tiny {
+    font-size: 0.8em;
+  }
+  .header {
+    text-decoration: underline;
+  }
+  .ti {
+    display: none;
+  }
+  .in {
+    color: green;
+  }
+  .out {
+    color: red;
+  }
+  body {
+    font-size: 1.2em;
+    font-family: sans-serif;
+    margin: 2em;
+  }
+  </style>
+</head>
+<body>
+  We're going to guess whether you're logged in to a number of popular sites based
+  on how long it takes us to fetch (through a hidden script element) resources
+  on that domain. This is a naive implementation of a technique described in the 2009 paper
+  "<a href='https://crypto.stanford.edu/~dabo/papers/webtiming.pdf'>Exposing Private Information by Timing Web Applications</a>" (PDF),
+  so we don't consider this a novel discovery, though the triviality of this
+  implementation and its potential applications are perhaps interesting.
+  Refinements to increase the accuracy of the guesses are welcome <a href="https://github.com/eloquence/checkmystatus">through GitHub</a>.
+  <p>
+  I've found script tags produce more consistent timings across Firefox and Chrome than image tags.
+  A reliable defense against this particular implementation is to disable third-party
+  cookies in your browser. The script requests will then not send the cookies along
+  which tell the sites that you're logged in.
+  <p>
+  Incidentally, that same mechanism (third-party cookies) is used by advertising networks
+  to track your identity across sites, so they're probably a good idea to disable if you care
+  about privacy. ;-)
+  <p>
+  Because desktop and mobile sites often differ dramatically, we use separate configurations
+  for those; if you're on a mobile browser, you'll see a smaller set of results.
+  <p>
+  <I>Tested in recent versions of Firefox and Chrome.</I>
+  <P>
+  <table id="report">
+  <tr class="header"><td>Site name</td><td>Status</td><td>Details</td></tr>
+  </table>
+  <img src="" id="ti" class="ti">
+  <script type="text/javascript" src="checkmystatus.js"> </script>
+</body>
+
+</html>
