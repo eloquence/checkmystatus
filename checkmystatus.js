@@ -9,7 +9,7 @@
           url: 'https://plus.google.com/people/find'
         },
         fast: {
-          url: 'http://www.google.com/404!'
+          url: 'https://www.google.com/404!'
         },
         minimum_delta: 700
       },
@@ -20,7 +20,7 @@
           url: 'https://plus.google.com/app/basic/people/find?sview=7'
         },
         fast: {
-          url: 'http://www.google.com/404!'
+          url: 'https://www.google.com/404!'
         },
         minimum_delta: 500
       },
